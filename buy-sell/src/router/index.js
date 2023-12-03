@@ -4,6 +4,7 @@ import Home from '../components/views/Home.vue'
 import ProductsList from '../components/ProductsList.vue'
 import SingleProduct from '../components/SingleProduct.vue'
 import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
 
 import {createRouter,createWebHistory} from 'vue-router'
 
@@ -37,6 +38,11 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        component: Register
     },
 
 ]

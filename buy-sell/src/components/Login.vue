@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     login() {
-      let buildRequest = fetch(`http://localhost:3030/users/login`, {
+       fetch(`http://localhost:3030/users/login`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
