@@ -2,6 +2,8 @@ import About from '../components/views/About.vue'
 import Contacts from '../components/views/Contacts.vue'
 import Home from '../components/views/Home.vue'
 import ProductsList from '../components/ProductsList.vue'
+import SingleProduct from '../components/SingleProduct.vue'
+import Login from '../components/Login.vue'
 
 import {createRouter,createWebHistory} from 'vue-router'
 
@@ -25,6 +27,16 @@ const routes = [
         path: '/products',
         name: 'Products',
         component: ProductsList
+    },
+    {
+        path: '/product1',
+        name: 'SingleProduct',
+        component: SingleProduct
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
     },
 
 ]
