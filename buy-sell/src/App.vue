@@ -1,16 +1,22 @@
-<script setup>
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
 
 <template>
   <div>
-   <h1>Started</h1>
+    <Header></Header>
+     <Footer></Footer>
   </div>
-  
 </template>
 
 <style scoped>
-h1 {
-  color:Green
-}
+
 </style>
