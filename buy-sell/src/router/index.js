@@ -5,11 +5,11 @@ import ProductsList from '../components/ProductsList.vue'
 import SingleProduct from '../components/SingleProduct.vue'
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
+import Upload from '../components/Upload.vue'
 
-import {createRouter,createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         name: 'Home',
         component: Home
@@ -44,11 +44,16 @@ const routes = [
         name: 'Register',
         component: Register
     },
+    {
+        path: '/upload',
+        name: 'Upload',
+        component: Upload
+    },
 
 ]
 
 const router = createRouter({
-    history:createWebHistory(),
+    history: createWebHistory(),
     routes,
 })
 

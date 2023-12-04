@@ -4,6 +4,7 @@
       <h2 class="product-name">Candle</h2>
       <p class="product-price">25лв</p>
       <p class="product-description">Scented candle.</p>
+      <button @click="seeMore" class="see-more-btn">See More</button>
     </div>
   </template>
   
@@ -48,6 +49,19 @@
   
   .product-description {
     color: #666;
+  }
+  .see-more-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .see-more-btn:hover {
+    background-color: #0056b3;
   }
   </style>
   
