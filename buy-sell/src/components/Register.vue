@@ -4,15 +4,15 @@
     <form @submit.prevent="registerUser">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email" required />
+        <input type="text" id="email" v-model="email" required/>
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required />
+        <input type="password" id="password" v-model="password" required/>
       </div>
       <div class="form-group">
         <label for="repeatPassword">Repeat Password:</label>
-        <input type="password" id="repeatPassword" v-model="repeatPassword" required />
+        <input type="password" id="repeatPassword" v-model="repeatPassword" required/>
       </div>
       <div class="form-group">
         <label for="gender">Gender:</label>
@@ -32,7 +32,10 @@
 import axios from "axios";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email } from "@vuelidate/validators";
+
 export default {
+
+
   data() {
     return {
       email: "",
@@ -41,48 +44,31 @@ export default {
       gender: "",
     };
   },
-  validations(){
-    return {
-        email:{required,email},
-      password: {required},
-      repeatPassword: "",
-      gender: {required},
-    }
-  },
+
+
   methods: {
     async registerUser() {
-      //   fetch(`http://localhost:3030/users/register`, {
-      //     method: "POST",
-      //     headers: {
-      //       "content-type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       email: this.email,
-      //       password: this.password,
-      //       repeatPassword: this.repeatPassword,
-      //       gender: this.gender,
-      //     }),
-      //   })
-      //     .then((response) => response.json())
-
-      //     .then((json) => console.log(json));
-      //     console.log(localStorage);
-      //   console.log("Registering user...");
-      //   console.log("Email:", this.email);
-      //   console.log("Password:", this.password);
-      //   console.log("Repeated Password:", this.repeatPassword);
-      //   console.log("Gender:", this.gender);
-
-      axios({
-        method: "post",
-        url: "http://localhost:3030/users/register",
-        data: JSON.stringify({
+      fetch(`http://localhost:3030/users/register`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
           email: this.email,
           password: this.password,
           repeatPassword: this.repeatPassword,
           gender: this.gender,
         }),
-      });
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+      
+      console.log("Registering user...");
+      console.log("Email:", this.email);
+      console.log("Password:", this.password);
+      console.log("Repeated Password:", this.repeatPassword);
+      console.log("Gender:", this.gender);
+     
     },
   },
 };
