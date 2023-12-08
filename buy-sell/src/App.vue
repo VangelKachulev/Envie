@@ -1,20 +1,24 @@
 <script>
-import Header from "./components/Header.vue";
+import HeaderApp from "./components/HeaderApp.vue";
 import Footer from "./components/views/Footer.vue";
 
 export default {
   components: {
-    Header,
+    HeaderApp,
     Footer,
   },
 };
 </script>
 
 <template>
-  <Header/>
-  <router-view/>
+  <div>
+    <HeaderApp />
+    <main>
+      <router-view />
+    </main>
 
-  <Footer/>
+    <Footer />
+  </div>
 </template>
 
 <style scoped></style>

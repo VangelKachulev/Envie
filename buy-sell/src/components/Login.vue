@@ -3,11 +3,11 @@
     <form @submit.prevent="login">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email" required />
+        <input type="text" id="email" v-model="user.email" required />
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required />
+        <input type="password" id="password" v-model="user.password" required />
       </div>
       <div class="form-group">
         <button type="submit">Login</button>
@@ -17,27 +17,27 @@
 </template>
 
 <script>
+import { loginUser } from "../providers/auth.js";
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      user: {
+        email: "",
+        password: "",
+      },
     };
   },
   methods: {
-    login() {
-       fetch(`http://localhost:3030/users/login`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ email:this.email, password:this.password }),
-      })
-        .then((response) => response.json())
-
+    async login() {
+      const userData = await loginUser(this.user)
+      .then((data) => {
        
-        .then((json) => console.log(json));
-      
+
+        localStorage.setItem(data.data.email, data.data.accessToken);
+      });
+
+     
+       console.log(localStorage);
     },
   },
 };
