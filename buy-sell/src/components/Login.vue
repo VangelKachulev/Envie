@@ -18,6 +18,8 @@
 
 <script>
 import { loginUser } from "../providers/auth.js";
+import { mapActions } from "pinia";
+import { useUserStore } from "../store/userStore.js";
 export default {
   data() {
     return {
@@ -27,17 +29,17 @@ export default {
       },
     };
   },
+
   methods: {
+    ...mapActions(useUserStore, ["setUserData"]),
     async login() {
-      const userData = await loginUser(this.user)
-      .then((data) => {
-       
+      const userData = await loginUser(this.user);
 
-        localStorage.setItem(data.data.email, data.data.accessToken);
-      });
+      if (userData) {
+        this.setUserData(userData);
+      }
 
-     
-       console.log(localStorage);
+      this.$router.push("/products");
     },
   },
 };
