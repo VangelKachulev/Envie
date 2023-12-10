@@ -11,11 +11,15 @@
       </div>
       <div class="form-group">
         <label for="productPicture">Product Picture:</label>
-        <input type="file" id="productPicture" @change="handleFileUpload" required />
+        <input type="text" id="productPicture" v-model="product.picture" required />
       </div>
       <div class="form-group">
         <label for="productDescription">Product Description:</label>
-        <textarea id="productDescription" v-model="product.description" required></textarea>
+        <textarea
+          id="productDescription"
+          v-model="product.description"
+          required
+        ></textarea>
       </div>
       <button type="submit">Upload Product</button>
     </form>
@@ -23,29 +27,40 @@
 </template>
 
 <script>
+import { mapActions } from "pinia";
+import { useUserStore } from "../store/userStore.js";
+import { uploadProduct } from "../providers/product.js";
+// import { useProductStore } from "../store/productStore.js";
+import { useAllProducts } from "../store/allProductsStore.js";
 export default {
   data() {
     return {
       product: {
-        name: '',
+        name: "",
         price: 0,
-        picture: null,
-        description: ''
-      }
+        picture: "",
+        description: "",
+      },
     };
   },
   methods: {
-    uploadProduct() {
-      // Here you can handle the form submission logic
-      // Access the product details from `this.product`
-      console.log('Product to be uploaded:', this.product);
-      // You can send this data to your backend for processing
+    ...mapActions(useUserStore, ["getData"]),
+    // ...mapActions(useProductStore, ["setProductData"]),
+    ...mapActions(useAllProducts, ["addProduct"]),
+
+    async uploadProduct() {
+      let profileData = this.getData();
+
+      const productData = await uploadProduct(profileData.data.accessToken, this.product);
+
+      this.addProduct(productData);
+      this.$router.push("/products");
     },
-    handleFileUpload(event) {
-      const file = event.target.files[0];
-      this.product.picture = file;
-    }
-  }
+    // handleFileUpload(event) {
+    //   const file = event.target.files[0];
+    //   this.product.picture = file;
+    // },
+  },
 };
 </script>
 

@@ -37,6 +37,7 @@ export default {
 
       if (userData) {
         this.setUserData(userData);
+        
       }
 
       this.$router.push("/products");
