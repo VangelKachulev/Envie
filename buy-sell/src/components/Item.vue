@@ -1,20 +1,19 @@
 <template>
   <div class="product">
-    <img
-     
-      :src="singleProductData.picture"
-      alt="Product Image"
-      class="product-image"
-    />
+    <img :src="singleProductData.picture" alt="Product Image" class="product-image" />
     <h2 class="product-name">{{ singleProductData.name }}</h2>
     <p class="product-price">{{ singleProductData.price }}</p>
     <p class="product-description">{{ singleProductData.description }}</p>
-    <!-- <img v-if="singleProductData.image" :src="productImageUrl" alt="Uploaded Image" /> -->
-    <button @click="seeMore" class="see-more-btn">See More</button>
+    <router-link :to="`/products/${singleProductData._id}`">See More</router-link>
+    <!-- <button @click="seeMore" class="see-more-btn">See More</button> -->
   </div>
 </template>
 
 <script>
+import { getSingleProduct } from "../providers/product.js";
+// import { setProductData } from "../store/productStore.js";
+import { mapActions } from "pinia";
+import { useUserStore } from "../store/userStore.js";
 export default {
   data() {
     return {};
@@ -25,22 +24,53 @@ export default {
       required: true,
     },
   },
-  computed: {
-    
+  methods: {
+    ...mapActions(useUserStore, ["setProductData"]),
+    async seeMore() {
+      console.log(this.singleProductData);
+      const dataForSingleItem = await getSingleProduct(this.singleProductData._id);
+      this.setProductData(dataForSingleItem);
+      // console.log(dataForSingleItem);
+      this.$router.push(`/products/${this.singleProductData._id}`);
+    },
   },
-};5
+  computed: {},
+};
+5;
 </script>
 
 <style scoped>
 .product {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
+  width: 250px; /* Set a fixed width for each product */
+  padding: 15px;
   margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   text-align: center;
-  width: 200px;
-  height: 360px;
-  
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product h3 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+}
+
+.product p {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.product span {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
 }
 
 .product-image {

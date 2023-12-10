@@ -21,3 +21,19 @@ export async function uploadProduct(token, product) {
 
     }
 }
+
+export async function getSingleProduct(id) {
+
+
+    try {
+
+        const res = axios.get(`http://localhost:3030/data/products/${id}`)
+
+        return res
+
+    } catch (e) {
+        console.log(e);
+        return null;
+
+    }
+}

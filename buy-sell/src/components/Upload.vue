@@ -30,7 +30,7 @@
 import { mapActions } from "pinia";
 import { useUserStore } from "../store/userStore.js";
 import { uploadProduct } from "../providers/product.js";
-// import { useProductStore } from "../store/productStore.js";
+
 import { useAllProducts } from "../store/allProductsStore.js";
 export default {
   data() {
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     ...mapActions(useUserStore, ["getData"]),
-    // ...mapActions(useProductStore, ["setProductData"]),
+    
     ...mapActions(useAllProducts, ["addProduct"]),
 
     async uploadProduct() {
