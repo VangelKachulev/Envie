@@ -1,20 +1,32 @@
 <template>
   <div>
-    <h1>{{ currentProduct.name }}</h1>
+    <img :src="currentProduct.picture" alt="Product Image" class="product-image" />
+    <h2 class="product-name">{{ currentProduct.name }}</h2>
+    <p class="product-price">{{ currentProduct.price }}</p>
+    <p class="product-description">{{ currentProduct.description }}</p>
+    <div v-if="this.userData && this.userData.data._id == currentProduct._ownerId">
+      <button>Edit</button>
+      <button>Delete</button>
+    </div>
   </div>
 </template>
 
 <script>
 import { getSingleProduct } from "../../providers/productProvider.js";
-
+import { mapState } from "pinia";
+import { useUserStore } from "../../store/userStore.js";
 export default {
   data() {
     return {
       currentProduct: {},
     };
   },
+  computed: {
+    ...mapState(useUserStore, ["userData"]),
+  },
   async mounted() {
-    console.log(this.$route.params.id);
+    // console.log(this.userData);
+    // console.log(this.$route.params.id);
     const currentid = this.$route.params.id;
     const dataForSingleItem = await getSingleProduct(currentid);
     console.log(dataForSingleItem.data);

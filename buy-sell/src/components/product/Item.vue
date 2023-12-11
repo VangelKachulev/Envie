@@ -11,7 +11,7 @@
 
 <script>
 import { getSingleProduct } from "../../providers/productProvider.js";
-// import { setProductData } from "../store/productStore.js";
+
 import { mapActions } from "pinia";
 import { useUserStore } from "../../store/userStore.js";
 export default {
@@ -24,6 +24,7 @@ export default {
       required: true,
     },
   },
+ 
   methods: {
     ...mapActions(useUserStore, ["setProductData"]),
     async seeMore() {

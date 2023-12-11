@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <template v-if="myAds">
+    <template v-if="myAds.length > 0">
       <Item
         v-for="ad of myAds"
         :key="ad._id"
@@ -9,7 +9,7 @@
       />
     </template>
     <template v-else>
-      <h1>Nothing</h1>
+      <h1>You don't have active ads.</h1>
     </template>
   </div>
 </template>
@@ -37,15 +37,7 @@ export default {
     const productsList = await getAll();
     const userData = this.getData();
 
-    console.log(productsList);
-    console.log(userData);
-
-    console.log(productsList.data[9]._ownerId);
-    console.log(userData.data._id);
-
-    // this.myAds = productsList.data.filter((x) => x.data._ownerId === userData.data._id);
-    this.myAds = productsList.data.filter((x) => x._ownerId == userData.data._id);
-    // console.log(this.myAds);
+    this.myAds = productsList.data.filter((x) => x._ownerId === userData.data._id);
   },
 };
 </script>
