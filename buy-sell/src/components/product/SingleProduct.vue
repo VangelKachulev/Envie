@@ -4,7 +4,7 @@
     <h2 class="product-name">{{ currentProduct.name }}</h2>
     <p class="product-price">{{ currentProduct.price }}</p>
     <p class="product-description">{{ currentProduct.description }}</p>
-    <div v-if="this.userData && this.userData.data._id == currentProduct._ownerId">
+    <div v-if="userIsLogged">
       <button>Edit</button>
       <button>Delete</button>
     </div>
@@ -22,17 +22,17 @@ export default {
     };
   },
   computed: {
+    userIsLogged(){
+      return this.userData && this.userData.data._id == this.currentProduct._ownerId
+    },
     ...mapState(useUserStore, ["userData"]),
   },
   async mounted() {
-    // console.log(this.userData);
-    // console.log(this.$route.params.id);
     const currentid = this.$route.params.id;
     const dataForSingleItem = await getSingleProduct(currentid);
-    console.log(dataForSingleItem.data);
     this.currentProduct = dataForSingleItem.data;
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

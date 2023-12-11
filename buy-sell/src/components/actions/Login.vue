@@ -48,7 +48,7 @@ export default {
           }
         } catch (e) {
           alert(`Something went wrong.Try again!`);
-          // navigate("/404");
+          
           return;
         }
       }
