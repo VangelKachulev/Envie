@@ -1,11 +1,12 @@
 import About from '../components/views/About.vue'
 import Contacts from '../components/views/Contacts.vue'
 import Home from '../components/views/Home.vue'
-import ProductsList from '../components/ProductsList.vue'
-import SingleProduct from '../components/SingleProduct.vue'
-import Login from '../components/Login.vue'
-import Register from '../components/Register.vue'
-import Upload from '../components/Upload.vue'
+import ProductsList from '../components/product/ProductsList.vue'
+import SingleProduct from '../components/product/SingleProduct.vue'
+
+import Login from '../components/actions/Login.vue'
+import Register from '../components/actions/Register.vue'
+import Upload from '../components/actions/Upload.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 

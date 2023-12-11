@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import { loginUser } from "../providers/auth.js";
+import { loginUser } from "../../providers/auth.js";
 import { mapActions } from "pinia";
-import { useUserStore } from "../store/userStore.js";
+import { useUserStore } from "../../store/userStore.js";
 export default {
   data() {
     return {

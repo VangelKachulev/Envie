@@ -1,30 +1,23 @@
 import { defineStore } from 'pinia';
 
 
-export const useProductStore = defineStore('product', {
+export const useAllProducts = defineStore('products', {
     state: () => {
 
         return {
-            productData: null,
+            productsList: [],
 
         }
     },
     actions: {
-        setProductData(productData) {
-            this.productData = productData;
+        addProduct(productData) {
+            this.productsList.push(productData);
         },
-        getProductData() {
-            return this.productData
+        getAllProducts() {
+            return this.productsList
         },
-        cleanProductData() {
-
-
-            return this.productData = null
-
-
-
-
-
+        cleanAllProductsa() {
+            return this.productsList = [];
         },
     }
 })

@@ -16,12 +16,12 @@
 
 <script>
 import Item from "./Item.vue";
-import { getAll } from "../providers/allProductsList.js";
+import { getAll } from "../../providers/productProvider.js";
 
 export default {
   data() {
     return {
-      products:[],
+      products: [],
     };
   },
   components: {
@@ -29,13 +29,8 @@ export default {
   },
   async mounted() {
     const productsList = await getAll();
-
-    console.log(productsList.data);
-     this.products = productsList.data;
-  //   for (const product of this.products) {
-  //     console.log(product);
-  //   }
-   },
+    this.products = productsList.data;
+  },
 };
 </script>
 

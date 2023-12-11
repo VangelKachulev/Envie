@@ -28,10 +28,10 @@
 
 <script>
 import { mapActions } from "pinia";
-import { useUserStore } from "../store/userStore.js";
-import { uploadProduct } from "../providers/product.js";
+import { useUserStore } from "../../store/userStore.js";
+import { uploadProduct } from "../../providers/productProvider.js";
 
-import { useAllProducts } from "../store/allProductsStore.js";
+import { useAllProducts } from "../../store/productStore.js";
 export default {
   data() {
     return {

@@ -5,23 +5,18 @@
 </template>
 
 <script>
-import { getSingleProduct } from "../providers/product";
-// import { mapActions } from "pinia";
-// import { useUserStore } from "../store/userStore.js";
+import { getSingleProduct } from "../../providers/productProvider.js";
+
 export default {
   data() {
     return {
       currentProduct: {},
     };
   },
-
   async mounted() {
     console.log(this.$route.params.id);
     const currentid = this.$route.params.id;
-
     const dataForSingleItem = await getSingleProduct(currentid);
-
-    // this.data = dataForSingleItem;
     console.log(dataForSingleItem.data);
     this.currentProduct = dataForSingleItem.data;
   },

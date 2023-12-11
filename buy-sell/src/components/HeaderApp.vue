@@ -48,20 +48,27 @@ export default {
 
 <style scoped>
 header {
-  background-color: #333;
-  color: #fff;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.798);
+  color: #e8e5e5;
   padding: 10px 20px;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  margin: 0px -3px;
 }
 
-nav ul li {
+ li {
   margin-right: 20px;
+  list-style-type: none;
+  font-size: 24px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 nav ul li a {

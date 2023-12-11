@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import { getSingleProduct } from "../providers/product.js";
+import { getSingleProduct } from "../../providers/productProvider.js";
 // import { setProductData } from "../store/productStore.js";
 import { mapActions } from "pinia";
-import { useUserStore } from "../store/userStore.js";
+import { useUserStore } from "../../store/userStore.js";
 export default {
   data() {
     return {};
