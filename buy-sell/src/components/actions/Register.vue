@@ -1,74 +1,66 @@
 <template>
   <div class="registration-form">
     <h2>Register</h2>
-    <form @submit.prevent="registerUser">
+    <form @submit.prevent="register">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="text" id="email" v-model="email" required/>
+        <input type="email" id="email" v-model="user.email" required />
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required/>
+        <input type="password" id="password" v-model="user.password" required />
       </div>
       <div class="form-group">
         <label for="repeatPassword">Repeat Password:</label>
-        <input type="password" id="repeatPassword" v-model="repeatPassword" required/>
+        <input
+          type="password"
+          id="repeatPassword"
+          v-model="user.repeatPassword"
+          required
+        />
       </div>
-      <div class="form-group">
-        <label for="gender">Gender:</label>
-        <select id="gender" v-model="gender" required>
-          <option value="">Select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+
       <button type="submit">Register</button>
     </form>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import { useVuelidate } from "@vuelidate/core";
-import { required, email } from "@vuelidate/validators";
+import { registerUser, loginUser } from "../../providers/auth.js";
+import { mapActions } from "pinia";
+import { useUserStore } from "../../store/userStore.js";
 
 export default {
-
-
   data() {
     return {
-      email: "",
-      password: "",
-      repeatPassword: "",
-      gender: "",
+      user: {
+        email: "",
+        password: "",
+        repeatPassword: "",
+      },
     };
   },
 
-
   methods: {
-    async registerUser() {
-      fetch(`http://localhost:3030/users/register`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          email: this.email,
-          password: this.password,
-          repeatPassword: this.repeatPassword,
-          gender: this.gender,
-        }),
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-      
-      console.log("Registering user...");
-      console.log("Email:", this.email);
-      console.log("Password:", this.password);
-      console.log("Repeated Password:", this.repeatPassword);
-      console.log("Gender:", this.gender);
-     
+    ...mapActions(useUserStore, ["setUserData"]),
+    async register() {
+      if (this.user.password !== this.user.repeatPassword || this.user.email.length < 6 || this.user.password.length < 6) {
+        alert(`Check your data and try again!`);
+        return;
+      } else {
+        try {
+          const userData = await registerUser(this.user);
+          loginUser(this.user);
+          this.setUserData(userData);
+          if (userData.data.accessToken) {
+            this.$router.push("/home");
+          }
+        } catch {
+          alert(`Something went wrong.Try again!`);
+          // navigate("/404");
+          return;
+        }
+      }
     },
   },
 };

@@ -12,6 +12,8 @@ export const useUserStore = defineStore('user', {
     actions: {
         setUserData(userInput) {
             this.userData = userInput;
+           
+            // console.log(this.userData);
         },
         getData() {
             return this.userData

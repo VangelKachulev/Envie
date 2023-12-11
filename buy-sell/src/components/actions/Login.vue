@@ -33,12 +33,25 @@ export default {
   methods: {
     ...mapActions(useUserStore, ["setUserData"]),
     async login() {
-      const userData = await loginUser(this.user);
+      if (this.user.password.length < 6 || this.user.email.length < 6) {
+        alert(`Username or password are too short!`);
+        return;
+      } else {
+        try {
+          const userData = await loginUser(this.user);
 
-      if (userData) {
-        this.setUserData(userData);
+          if (userData) {
+            this.setUserData(userData);
+            this.$router.push("/products");
+          } else {
+            alert(`unknown user`);
+          }
+        } catch (e) {
+          alert(`Something went wrong.Try again!`);
+          // navigate("/404");
+          return;
+        }
       }
-      this.$router.push("/products");
     },
   },
 };

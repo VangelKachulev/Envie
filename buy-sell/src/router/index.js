@@ -3,7 +3,7 @@ import Contacts from '../components/views/Contacts.vue'
 import Home from '../components/views/Home.vue'
 import ProductsList from '../components/product/ProductsList.vue'
 import SingleProduct from '../components/product/SingleProduct.vue'
-
+import MyAds from '../components/profile/MyAds.vue'
 import Login from '../components/actions/Login.vue'
 import Register from '../components/actions/Register.vue'
 import Upload from '../components/actions/Upload.vue'
@@ -49,6 +49,12 @@ const routes = [{
         path: '/upload',
         name: 'Upload',
         component: Upload
+    },
+
+    {
+        path: '/myads',
+        name: 'Myads',
+        component: MyAds
     },
 
 ]
