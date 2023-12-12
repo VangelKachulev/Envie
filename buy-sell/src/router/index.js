@@ -7,6 +7,7 @@ import MyAds from '../components/profile/MyAds.vue'
 import Login from '../components/actions/Login.vue'
 import Register from '../components/actions/Register.vue'
 import Upload from '../components/actions/Upload.vue'
+import Edit from '../components/actions/Edit.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -55,6 +56,11 @@ const routes = [{
         path: '/myads',
         name: 'Myads',
         component: MyAds
+    }, 
+    {
+        path: '/products/edit/:id',
+        name: 'Edit',
+        component: Edit
     },
 
 ]

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1>Home</h1>
+    <img
+      src="https://exitpromise.com/wp-content/uploads/2013/02/Buy-Sell-Agreement.jpg"
+      alt=""
+    />
   </div>
 </template>
 
@@ -8,4 +11,18 @@
 export default {};
 </script>
 
-<style  scoped></style>
+<style scoped>
+div{
+ 
+}
+img {
+  width: 100%;
+  height: 80vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+ 
+  border-radius: 15px;
+  
+}
+</style>

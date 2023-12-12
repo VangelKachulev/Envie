@@ -5,15 +5,14 @@
     <p class="product-price">{{ singleProductData.price }}</p>
     <p class="product-description">{{ singleProductData.description }}</p>
     <router-link :to="`/products/${singleProductData._id}`">See More</router-link>
-    <!-- <button @click="seeMore" class="see-more-btn">See More</button> -->
   </div>
 </template>
 
 <script>
 import { getSingleProduct } from "../../providers/productProvider.js";
-
 import { mapActions } from "pinia";
 import { useUserStore } from "../../store/userStore.js";
+
 export default {
   data() {
     return {};
@@ -24,18 +23,15 @@ export default {
       required: true,
     },
   },
- 
+
   methods: {
-    ...mapActions(useUserStore, ["setProductData"]),
+
     async seeMore() {
-      console.log(this.singleProductData);
       const dataForSingleItem = await getSingleProduct(this.singleProductData._id);
-      this.setProductData(dataForSingleItem);
-      // console.log(dataForSingleItem);
+      // this.setProductData(dataForSingleItem);
       this.$router.push(`/products/${this.singleProductData._id}`);
     },
   },
-  computed: {},
 };
 5;
 </script>

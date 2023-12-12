@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <template v-if="products">
+    <template v-if="productsCheck">
       <Item
         v-for="product of products"
         :key="product._id"
@@ -9,7 +9,7 @@
       />
     </template>
     <template v-else>
-      <h1>Nothing</h1>
+      <h1>There is no active ads.</h1>
     </template>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
   },
   components: {
     Item,
+  },
+  computed: {
+    productsCheck() {
+      return this.products.length > 0;
+    },
   },
   async mounted() {
     const productsList = await getAll();

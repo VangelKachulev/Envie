@@ -17,7 +17,7 @@ export async function uploadProduct(token, product) {
         const res = await axios.post('http://localhost:3030/data/products', product, {
             headers: {
                 'X-Authorization': token,
-                'Content-Type': 'application/json' 
+                'Content-Type': 'application/json'
             }
         });
 
@@ -37,5 +37,22 @@ export async function getSingleProduct(id) {
         console.log(e);
         return null;
 
+    }
+}
+export async function editProduct(token, product, id) {
+
+    try {
+        const res = await axios.put(`http://localhost:3030/data/products/${id}`, product, {
+            headers: {
+                'X-Authorization': token,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        return res
+
+    } catch (e) {
+        console.log(e);
+        return null;
     }
 }

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="product-main">
     <img :src="currentProduct.picture" alt="Product Image" class="product-image" />
     <h2 class="product-name">{{ currentProduct.name }}</h2>
-    <p class="product-price">{{ currentProduct.price }}</p>
-    <p class="product-description">{{ currentProduct.description }}</p>
+    <p class="product-price">Price:{{ currentProduct.price }}</p>
+    <p class="product-description">Description:{{ currentProduct.description }}</p>
     <div v-if="userIsLogged">
-      <button>Edit</button>
+      <button @click="editProduct">Edit</button>
       <button>Delete</button>
     </div>
   </div>
@@ -22,10 +22,16 @@ export default {
     };
   },
   computed: {
-    userIsLogged(){
-      return this.userData && this.userData.data._id == this.currentProduct._ownerId
+    userIsLogged() {
+      return this.userData && this.userData.data._id == this.currentProduct._ownerId;
     },
     ...mapState(useUserStore, ["userData"]),
+  },
+  methods:{
+    editProduct(){
+      console.log(this.currentProduct._id);
+      this.$router.push(`/products/edit/${this.currentProduct._id}`);
+    }
   },
   async mounted() {
     const currentid = this.$route.params.id;
@@ -35,4 +41,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.product-main {
+  height: 300px;
+}
+.product-image {
+  height: 200px;
+}
+</style>
