@@ -7,15 +7,15 @@
       <p class="product-description">Description:{{ currentProduct.description }}</p>
       <div v-if="userIsLogged">
         <button @click="editProduct">Edit</button>
-        <button>Delete</button>
+        <button @click="removeItem">Delete</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getSingleProduct } from "../../providers/productProvider.js";
-import { mapState } from "pinia";
+import { getSingleProduct, deleteProduct } from "../../providers/productProvider.js";
+import { mapState, mapActions } from "pinia";
 import { useUserStore } from "../../store/userStore.js";
 export default {
   data() {
@@ -28,11 +28,27 @@ export default {
       return this.userData && this.userData.data._id == this.currentProduct._ownerId;
     },
     ...mapState(useUserStore, ["userData"]),
+    ...mapActions(useUserStore, ["deleteSingleProduct"]),
   },
   methods: {
     editProduct() {
       console.log(this.currentProduct._id);
       this.$router.push(`/products/edit/${this.currentProduct._id}`);
+    },
+    async removeItem() {
+      const confirmation = window.confirm("Are you sure you want to delete this ad?");
+      console.log(this.userData.data.accessToken);
+      console.log(this.currentProduct._id);
+      if (confirmation) {
+        console.log(`yes`);
+        const res = await deleteProduct(
+          this.userData.data.accessToken,
+          this.currentProduct._id
+        );
+        // this.deleteSingleProduct(this.currentProduct._id);
+        console.log(res);
+        this.$router.push(`/myads`);
+      }
     },
   },
   async mounted() {

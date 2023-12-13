@@ -19,5 +19,9 @@ export const useAllProducts = defineStore('products', {
         cleanAllProductsa() {
             return this.productsList = [];
         },
+        deleteSingleProduct(id) {
+            console.log(this.productsList);
+            // return this.productsList.filter(x => x._id !== id);
+        },
     }
 })

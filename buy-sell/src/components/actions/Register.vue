@@ -75,8 +75,8 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
     rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 450px;
-  height: 50vh;
+  width: 350px;
+  height: 45vh;
 
   border-radius: 15px;
   background-color: #f9f9f9;
@@ -93,7 +93,7 @@ h1 {
   font-weight: 800;
 }
 form {
-  width: 408px;
+  width: 300px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@ form {
 .form-group {
   margin-bottom: 35px;
   margin: 0 auto;
-  width:400px;
+  width:300px;
   display:flex;
   flex-direction: column;
   align-content: center;
@@ -113,7 +113,7 @@ label {
   display: block;
   margin-bottom: 5px;
   font-size: 1.6rem;
-  width:400px
+  width:300px
 }
 
 #email,
