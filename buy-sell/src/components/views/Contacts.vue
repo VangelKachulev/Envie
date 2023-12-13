@@ -12,7 +12,7 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faStar } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faInstagram,
   faFacebookSquare,
@@ -40,13 +40,15 @@ h1 {
   margin: 1.5rem;
 }
 .icon:hover {
-    color:rgb(89, 89, 112);
-    cursor: pointer;
+  color: rgb(89, 89, 112);
+  cursor: pointer;
 }
 .container {
   display: flex;
   border-radius: 10px;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 </style>

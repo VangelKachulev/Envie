@@ -2,9 +2,11 @@
   <div class="product">
     <img :src="singleProductData.picture" alt="Product Image" class="product-image" />
     <h2 class="product-name">{{ singleProductData.name }}</h2>
-    <p class="product-price">{{ singleProductData.price }}</p>
-    <p class="product-description">{{ singleProductData.description }}</p>
-    <router-link :to="`/products/${singleProductData._id}`">See More</router-link>
+    <p class="product-price">$ {{ singleProductData.price }}</p>
+
+    <router-link class="button" :to="`/products/${singleProductData._id}`"
+      >See More</router-link
+    >
   </div>
 </template>
 
@@ -37,60 +39,38 @@ export default {
 
 <style scoped>
 .product {
-  width: 250px; /* Set a fixed width for each product */
-  padding: 15px;
+  width: 230px;
+  padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
+  height: 300px;
+}
+.product:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
-.product img {
-  max-width: 100%;
-  height: 200px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.product h3 {
+.product h2 {
   margin-bottom: 8px;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .product p {
-  margin-bottom: 8px;
-  font-size: 0.9em;
-}
-
-.product span {
-  display: block;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #333;
+  margin-bottom: 28px;
+  font-size: 1em;
 }
 
 .product-image {
   width: 70%;
-  height: 50;
+  height: 50%;
   border-radius: 4px;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
-.product-name {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.product-price {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.product-description {
-  color: #666;
-}
-.see-more-btn {
+.button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -98,9 +78,11 @@ export default {
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
-.see-more-btn:hover {
+.button:hover {
   background-color: #0056b3;
 }
 </style>
