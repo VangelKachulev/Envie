@@ -1,27 +1,32 @@
 <template>
   <header>
     <nav>
-      
-      <ul v-if="!userData">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/products">All Products</router-link></li>
+      <div v-if="!userData">
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/products">All Products</router-link></li>
 
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/contact">Contacts</router-link></li>
-        <li><router-link to="/login">Login</router-link></li>
-        <li><router-link to="/register">Register</router-link></li>
-      </ul>
-      <ul v-else>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/products">All Products</router-link></li>
-        <li><router-link to="/upload">Upload</router-link></li>
-        <li><router-link to="/myads">My ads</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/contact">Contacts</router-link></li>
-        <li><a href="/" @click="exit">Exit</a></li>
-      </ul>
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/contact">Contacts</router-link></li>
+          <li><router-link to="/login">Login</router-link></li>
+          <li><router-link to="/register">Register</router-link></li>
+        </ul>
+        <h1>Welcome to Buy<spot>&</spot>Sell !</h1>
+      </div>
+      <div v-else>
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/products">All Products</router-link></li>
+          <li><router-link to="/upload">Upload</router-link></li>
+          <li><router-link to="/myads">My ads</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/contact">Contacts</router-link></li>
+          <li><a href="/" @click="exit">Exit</a></li>
+        </ul>
+        <h1>Welcome {{ userData.data.email }} !</h1>
+        
+      </div>
     </nav>
-    
   </header>
 </template>
 
@@ -48,28 +53,34 @@ export default {
 
 <style scoped>
 header {
-  margin: 15px 0;
-
-  
-  padding: 25px 25px;
-  
+  padding-top: 15px;
 }
-
-nav ul {
+spot{
+  color:red
+}
+ul {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: flex-end;
+
   box-sizing: border-box;
   margin: 0px -3px;
-  
 }
+h1 {
+  text-align: center;
+  background-color: rgb(254, 195 , 91);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 6px;
 
+}
 li {
-  display: flex; 
+  display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   margin-right: 20px;
   width: 140px;
   height: 30px;
@@ -77,18 +88,16 @@ li {
   text-align: center;
 
   font-size: 17px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
   border-radius: 15px;
   padding: 10px;
   color: rgb(0, 0, 0);
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
-li:hover{
+li:hover {
   border-radius: 15px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
- 
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 nav ul li a {
@@ -96,6 +105,4 @@ nav ul li a {
   color: #131111;
   font-weight: bold;
 }
-
-
 </style>

@@ -25,10 +25,9 @@ export default {
   },
 
   methods: {
-
     async seeMore() {
       const dataForSingleItem = await getSingleProduct(this.singleProductData._id);
-      // this.setProductData(dataForSingleItem);
+
       this.$router.push(`/products/${this.singleProductData._id}`);
     },
   },
@@ -48,7 +47,7 @@ export default {
 
 .product img {
   max-width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 5px;
   margin-bottom: 10px;
 }

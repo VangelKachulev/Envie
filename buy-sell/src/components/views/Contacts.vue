@@ -1,15 +1,52 @@
 <template>
-    <div>
-<h1>Contacts</h1>
+  <div>
+    <h1>Find us</h1>
+    <div class="container">
+      <font-awesome-icon class="icon" icon="fa-brands fa-square-facebook" size="2xl" />
+      <font-awesome-icon class="icon" icon="fa-brands fa-instagram" size="2xl" />
+      <font-awesome-icon class="icon" icon="fa-brands fa-square-twitter" size="2xl" />
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCoffee, faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInstagram,
+  faFacebookSquare,
+  faTwitterSquare,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons"; // Import the Facebook icon from brands
+// Add the imported icons to the library
+library.add(faFacebookSquare, faInstagram, faTwitterSquare, faLinkedinIn);
+
+export default {
+  components: {
+    FontAwesomeIcon,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+}
+.icon {
+  font-size: 10rem;
+  margin: 1.5rem;
+}
+.icon:hover {
+    color:rgb(89, 89, 112);
+    cursor: pointer;
+}
+.container {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 </style>
