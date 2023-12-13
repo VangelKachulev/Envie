@@ -24,7 +24,6 @@
           <li><a href="/" @click="exit">Exit</a></li>
         </ul>
         <h1>Welcome {{ userData.data.email }} !</h1>
-        
       </div>
     </nav>
   </header>
@@ -55,8 +54,8 @@ export default {
 header {
   padding-top: 15px;
 }
-spot{
-  color:red
+spot {
+  color: rgb(255, 254, 254);
 }
 ul {
   display: flex;
@@ -69,13 +68,13 @@ ul {
 }
 h1 {
   text-align: center;
-  background-color: rgb(254, 195 , 91);
+  background-color: rgba(98, 177, 208, 1);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 15px;
   font-size: 18px;
   padding: 6px;
-
+  color: white;
 }
 li {
   display: flex;
@@ -86,8 +85,8 @@ li {
   height: 30px;
   list-style-type: none;
   text-align: center;
-
-  font-size: 17px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
 
   border-radius: 15px;
   padding: 10px;

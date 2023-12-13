@@ -84,11 +84,17 @@ export default {
   font-size: 2rem;
 }
 button {
-  padding: 10px;
-  margin: 10px;
+  margin: 30px 5px;
   width: 100px;
   border-radius: 10px;
   font-size: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
 }
 </style>

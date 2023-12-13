@@ -1,7 +1,7 @@
 <template>
   <div>
     <img
-      src="./thisone.jpg"
+      src="https://wallpaperaccess.com/full/2593143.jpg"
       alt="something went wrong"
     />
   </div>
@@ -17,6 +17,8 @@ div{
  align-content: center;
  justify-content: center;
  width: 1920px;
+ margin-top:50px;
+ height:auto
 }
 img {
    width: 1620px;

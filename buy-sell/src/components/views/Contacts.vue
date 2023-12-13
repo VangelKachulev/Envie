@@ -2,9 +2,16 @@
   <div>
     <h1>Find us</h1>
     <div class="container">
-      <font-awesome-icon class="icon" icon="fa-brands fa-square-facebook" size="2xl" />
-      <font-awesome-icon class="icon" icon="fa-brands fa-instagram" size="2xl" />
-      <font-awesome-icon class="icon" icon="fa-brands fa-square-twitter" size="2xl" />
+      <a href="https://www.facebook.com/" target="_blank">
+        <font-awesome-icon class="icon" icon="fa-brands fa-square-facebook" size="2xl" />
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <font-awesome-icon class="icon" icon="fa-brands fa-instagram" size="2xl" />
+      </a>
+
+      <a href="https://www.twitter.com/" target="_blank">
+        <font-awesome-icon class="icon" icon="fa-brands fa-square-twitter" size="2xl" />
+      </a>
     </div>
   </div>
 </template>
@@ -38,9 +45,10 @@ h1 {
 .icon {
   font-size: 10rem;
   margin: 1.5rem;
+  color: #007bff;
 }
 .icon:hover {
-  color: rgb(89, 89, 112);
+  color:   rgba(248, 198, 112, 0.891);
   cursor: pointer;
 }
 .container {

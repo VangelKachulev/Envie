@@ -8,7 +8,7 @@
     </p>
     <p class="ourstory">Our Story</p>
     <p>
-      Founded with a vision to revolutionize the way people trade goods, [Website Name]
+      Founded with a vision to revolutionize the way people trade goods, Buy&Sell!
       began as a simple idea among friends. We understood the frustration of traditional
       selling methods and saw an opportunity to create a platform that simplifies the
       process, making it accessible to all.
