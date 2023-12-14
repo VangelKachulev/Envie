@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>&copy; 2023 Your Website. All rights reserved.</p>
+    <p>&copy; 2023 Buy&Sell. All rights reserved.</p>
   </footer>
 </template>
 
@@ -12,10 +12,15 @@ export default {};
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  background-color: #333;
+  width:100%;
+  background-color: rgb(236, 166, 95);
   color: #fff;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 0;
+
+}
+p{
+  font-size:1.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 </style>

@@ -37,12 +37,13 @@ import { useUserStore } from "../store/userStore.js";
 export default {
   computed: {
     ...mapState(useUserStore, ["userData"]),
+    ...mapActions(useUserStore, ["cleanData"]),
   },
 
   methods: {
-    ...mapActions(useUserStore, ["cleanData"]),
+   
     exit() {
-      console.log(`haha`);
+     
 
       this.cleanData();
     },
@@ -54,9 +55,7 @@ export default {
 header {
   padding-top: 15px;
 }
-spot {
-  color: rgb(255, 254, 254);
-}
+
 ul {
   display: flex;
   flex-direction: row;
@@ -68,7 +67,7 @@ ul {
 }
 h1 {
   text-align: center;
-  background-color: rgba(98, 177, 208, 1);
+  background-color: rgb(235, 165, 95);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   border-radius: 15px;
@@ -76,6 +75,14 @@ h1 {
   padding: 6px;
   color: white;
 }
+li:hover{
+  background-color:rgba(76, 191, 191, 0.772)
+  
+}
+a:hover{
+  color:white
+}
+
 li {
   display: flex;
   align-items: center;

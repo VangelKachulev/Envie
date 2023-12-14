@@ -19,16 +19,9 @@
 </template>
 
 <script>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee, faStar } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons"; // Import the Facebook icon from brands
-// Add the imported icons to the library
-library.add(faCoffee, faFacebook, faStar);
+
 export default {
-  components: {
-    FontAwesomeIcon,
-  },
+ 
 };
 </script>
 

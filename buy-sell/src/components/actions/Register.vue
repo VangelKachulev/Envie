@@ -57,11 +57,11 @@ export default {
           loginUser(this.user);
           this.setUserData(userData);
           if (userData.data.accessToken) {
-            this.$router.push("/home");
+            this.$router.push("/");
           }
         } catch {
           alert(`Something went wrong.Try again!`);
-          // navigate("/404");
+          this.$router.push("/404");
           return;
         }
       }

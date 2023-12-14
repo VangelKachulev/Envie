@@ -8,8 +8,9 @@ export async function loginUser(user) {
         return res
 
     } catch (e) {
-        return null;
         console.log(e);
+        this.$router.push("/404");
+        return null;
 
     }
 }
@@ -20,8 +21,9 @@ export async function registerUser(user) {
         return res
 
     } catch (e) {
-        return null;
         console.log(e);
+        this.$router.push("/404");
+        return null;
 
     }
 }

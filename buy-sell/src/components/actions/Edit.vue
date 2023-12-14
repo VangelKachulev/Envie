@@ -31,7 +31,6 @@ import { mapState } from "pinia";
 import { useUserStore } from "../../store/userStore.js";
 import { editProduct, getSingleProduct } from "../../providers/productProvider.js";
 
-
 export default {
   data() {
     return {
@@ -61,7 +60,6 @@ export default {
       const token = this.userData.data.accessToken;
       const id = this.$route.params.id;
       const res = await editProduct(token, this.product, id);
-      console.log(res);
       this.$router.push(`/products/${id}`);
     },
   },

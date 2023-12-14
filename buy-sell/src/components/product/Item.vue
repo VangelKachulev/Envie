@@ -11,10 +11,6 @@
 </template>
 
 <script>
-import { getSingleProduct } from "../../providers/productProvider.js";
-import { mapActions } from "pinia";
-import { useUserStore } from "../../store/userStore.js";
-
 export default {
   data() {
     return {};
@@ -26,13 +22,6 @@ export default {
     },
   },
 
-  methods: {
-    async seeMore() {
-      const dataForSingleItem = await getSingleProduct(this.singleProductData._id);
-
-      this.$router.push(`/products/${this.singleProductData._id}`);
-    },
-  },
 };
 5;
 </script>

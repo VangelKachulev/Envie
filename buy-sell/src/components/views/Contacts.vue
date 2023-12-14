@@ -25,8 +25,7 @@ import {
   faFacebookSquare,
   faTwitterSquare,
   faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons"; // Import the Facebook icon from brands
-// Add the imported icons to the library
+} from "@fortawesome/free-brands-svg-icons"; 
 library.add(faFacebookSquare, faInstagram, faTwitterSquare, faLinkedinIn);
 
 export default {
@@ -45,11 +44,12 @@ h1 {
 .icon {
   font-size: 10rem;
   margin: 1.5rem;
-  color: #007bff;
+  color: rgba(62, 162, 162, 0.772)
+ 
 }
 .icon:hover {
   color:   rgba(248, 198, 112, 0.891);
-  cursor: pointer;
+
 }
 .container {
   display: flex;

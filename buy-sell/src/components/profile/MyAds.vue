@@ -29,7 +29,7 @@ export default {
   components: {
     Item,
   },
-  computed: {},
+
   methods: {
     ...mapActions(useUserStore, ["getData"]),
   },

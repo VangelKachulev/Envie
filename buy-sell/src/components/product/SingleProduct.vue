@@ -32,21 +32,12 @@ export default {
   },
   methods: {
     editProduct() {
-      console.log(this.currentProduct._id);
       this.$router.push(`/products/edit/${this.currentProduct._id}`);
     },
     async removeItem() {
       const confirmation = window.confirm("Are you sure you want to delete this ad?");
-      console.log(this.userData.data.accessToken);
-      console.log(this.currentProduct._id);
       if (confirmation) {
-        console.log(`yes`);
-        const res = await deleteProduct(
-          this.userData.data.accessToken,
-          this.currentProduct._id
-        );
-        // this.deleteSingleProduct(this.currentProduct._id);
-        console.log(res);
+        await deleteProduct(this.userData.data.accessToken, this.currentProduct._id);
         this.$router.push(`/myads`);
       }
     },
@@ -55,7 +46,6 @@ export default {
     const currentid = this.$route.params.id;
     const dataForSingleItem = await getSingleProduct(currentid);
     this.currentProduct = dataForSingleItem.data;
-    console.log(dataForSingleItem);
   },
 };
 </script>
@@ -68,7 +58,7 @@ export default {
   background-color: rgba(213, 217, 220, 0.261);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .product-image {

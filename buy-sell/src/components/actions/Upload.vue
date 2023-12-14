@@ -45,8 +45,8 @@ export default {
   },
   methods: {
     ...mapActions(useUserStore, ["getData"]),
-    
     ...mapActions(useAllProducts, ["addProduct"]),
+    
 
     async uploadProduct() {
       let profileData = this.getData();
@@ -56,10 +56,7 @@ export default {
       this.addProduct(productData);
       this.$router.push("/products");
     },
-    // handleFileUpload(event) {
-    //   const file = event.target.files[0];
-    //   this.product.picture = file;
-    // },
+   
   },
 };
 </script>

@@ -1,6 +1,7 @@
 import About from '../components/views/About.vue'
 import Contacts from '../components/views/Contacts.vue'
 import Home from '../components/views/Home.vue'
+import Error from '../components/views/Error.vue'
 import ProductsList from '../components/product/ProductsList.vue'
 import SingleProduct from '../components/product/SingleProduct.vue'
 import MyAds from '../components/profile/MyAds.vue'
@@ -62,6 +63,12 @@ const routes = [{
         name: 'Edit',
         component: Edit
     },
+    {
+        path: '/404',
+        name: 'Error',
+        component: Error
+    },
+
 
 ]
 

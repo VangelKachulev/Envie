@@ -21,11 +21,11 @@ div{
  height:auto
 }
 img {
-   width: 1620px;
+   width: 1720px;
 
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(211, 44, 44, 0.25) 0px 54px 55px, rgba(158, 55, 55, 0.12) 0px -12px 30px,
+    rgba(167, 21, 21, 0.12) 0px 4px 6px, rgba(179, 43, 43, 0.17) 0px 12px 13px,
+    rgba(203, 46, 46, 0.09) 0px -3px 5px;
  
   border-radius: 15px;
 

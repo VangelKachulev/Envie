@@ -34,7 +34,7 @@ export async function getSingleProduct(id) {
         return res
 
     } catch (e) {
-        console.log(e);
+        this.$router.push("/404");
         return null;
 
     }
@@ -53,6 +53,7 @@ export async function editProduct(token, product, id) {
 
     } catch (e) {
         console.log(e);
+        this.$router.push("/404");
         return null;
     }
 }
@@ -70,6 +71,7 @@ export async function deleteProduct(token, id) {
 
     } catch (e) {
         console.log(e);
+        this.$router.push("/404");
         return null;
     }
 }

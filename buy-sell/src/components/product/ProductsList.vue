@@ -44,4 +44,9 @@ export default {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
 }
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 </style>
