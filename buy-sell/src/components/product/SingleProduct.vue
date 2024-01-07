@@ -38,6 +38,7 @@ export default {
       const confirmation = window.confirm("Are you sure you want to delete this ad?");
       if (confirmation) {
         await deleteProduct(this.userData.data.accessToken, this.currentProduct._id);
+        // this.deleteSingleProduct(this.currentProduct._id, this.currentProduct);
         this.$router.push(`/myads`);
       }
     },

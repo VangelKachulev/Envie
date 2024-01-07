@@ -11,8 +11,8 @@ export default {
 </script>
 
 <template>
-  <div>
-    <HeaderApp />
+  <div class="main">
+    <HeaderApp  />
     <main>
       <router-view />
     </main>
@@ -21,4 +21,10 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main{
+  box-sizing: border-box;
+  padding: 0px;
+  margin:-11px;
+}
+</style>

@@ -17,7 +17,7 @@ div{
  align-content: center;
  justify-content: center;
  width: 1920px;
- margin-top:50px;
+ margin-top:30px;
  height:auto
 }
 img {

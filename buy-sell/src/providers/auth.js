@@ -14,6 +14,23 @@ export async function loginUser(user) {
 
     }
 }
+export async function logout(token) {
+    try {
+
+        const res = await axios.get('http://localhost:3030/users/logout', {
+            headers: {
+                'X-Authorization': token
+            }
+        })
+        return res
+
+    } catch (e) {
+        console.log(e);
+        this.$router.push("/404");
+        return null;
+
+    }
+}
 export async function registerUser(user) {
     try {
 

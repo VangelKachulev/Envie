@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapActions, mapState } from "pinia";
 import { useUserStore } from "../../store/userStore.js";
 import { editProduct, getSingleProduct } from "../../providers/productProvider.js";
 
@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     ...mapState(useUserStore, ["userData"]),
+    ...mapActions(useUserStore, ["editSingleProduct"]),
   },
   async mounted() {
     const currentid = this.$route.params.id;
@@ -59,7 +60,9 @@ export default {
     async saveChanges() {
       const token = this.userData.data.accessToken;
       const id = this.$route.params.id;
-      const res = await editProduct(token, this.product, id);
+      //  this.editSingleProduct(id,this.product);
+      
+      await editProduct(token, this.product, id);
       this.$router.push(`/products/${id}`);
     },
   },
