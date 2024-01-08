@@ -48,8 +48,8 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { logout } from "../providers/auth";
-import { useUserStore } from "../store/userStore.js";
+import { logout } from "../../../providers/auth";
+import { useUserStore } from "../../../store/userStore.js";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
