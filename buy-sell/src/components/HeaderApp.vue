@@ -28,7 +28,7 @@
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/register">Register</router-link></li>
         </ul>
-        <h3>Welcome to Buy&Sell !</h3>
+        
       </div>
       <div v-else>
         <ul>
@@ -104,7 +104,7 @@ header {
   justify-content: space-around;
   width: 100%;
   text-align: center;
-  padding: 25px 20px;
+  padding: 20px 20px;
 }
 .icons-2 {
   display: flex;
@@ -131,7 +131,7 @@ header {
   font-family: "Amatic SC", sans-serif;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 50px;
-  letter-spacing: 12px;
+  letter-spacing:14px;
   color: #131111;
 }
 .creating {
@@ -139,6 +139,8 @@ header {
   font-family: "Amatic SC", sans-serif;
   font-family: "Pathway Gothic One", sans-serif;
   font-family: "Satisfy", cursive;
+  margin-top:10px;
+  letter-spacing:5px;
 }
 ul {
   display: flex;
