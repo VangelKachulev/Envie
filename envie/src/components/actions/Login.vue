@@ -1,26 +1,34 @@
 <template>
-  <div class="main">
+  <div class="main-login">
     <div class="login-form">
-      <h1>Login</h1>
-      <form @submit.prevent="login">
+      <h1>LOGIN</h1>
+      <p class="no-account">
+        Don't have an account yet?
+        <span class="register-span" @click="register" type="submit">Create account</span>
+      </p>
+      <form class="form" @submit.prevent="login">
         <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="text" id="email" v-model="user.email" required />
+          <input
+            type="text"
+            id="email"
+            v-model="user.email"
+            required
+            placeholder="Email"
+          />
         </div>
         <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" v-model="user.password" required />
+          <input
+            type="password"
+            id="password"
+            v-model="user.password"
+            required
+            placeholder="Password"
+          />
         </div>
+        <p class="forgot-password">Forgot password?</p>
         <div class="form-group3">
-          <button type="submit">Login</button>
-        </div>
-        <div class="line-with-word">
-          <div class="line"></div>
-          <div class="word">or</div>
-          <div class="line"></div>
-        </div>
-        <div class="form-group3">
-          <button @click="register" type="submit">Sign Up</button>
+          <button type="submit">SIGN IN</button>
+          <span @click="backToStore" class="return">Return to Store</span>
         </div>
       </form>
     </div>
@@ -64,108 +72,96 @@ export default {
         }
       }
     },
-    register(){
+    register() {
       this.$router.push("/register");
-    }
+    },
+    backToStore() {
+      this.$router.push("/home");
+    },
   },
 };
 </script>
 
 <style scoped>
-.main {
-  height: 100vh;
-  background-color: rgb(179, 209, 243);
-  border-radius: 25px;
-  background-image: url("../views/7552428_33.jpg");
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Pathway+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Pathway+Gothic+One&family=Satisfy&display=swap");
+
+.main-login {
 }
 h1 {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 800;
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+.no-account {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 100;
+  width: 500px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: rgb(163, 155, 155);
+}
+.register-span {
+  color: rgb(67, 64, 64);
+  cursor: pointer;
 }
 .login-form {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 300px;
+  width: 500px;
   height: 45vh;
-
-  padding: 0;
-
-  border-radius: 15px;
-  background-color: #f9f9f9;
-
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.login-form:hover{
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+.form {
+  width: 100%;
+  margin-top: 30px;
 }
-form {
-  width: 208px;
-  margin: 0 auto;
-}
-label {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 18px;
-}
+
 .form-group {
   margin-bottom: 35px;
   margin: 0 auto;
 }
-.form-group3{
-  display: flex;
-}
-label {
-  display: block;
-  margin-bottom: 5px;
-}
 
 #email,
 #password {
-  width: 200px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  height: 1.5rem;
-  background-color: rgba(217, 212, 212, 0.523);
-}
+  width: 100%;
 
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.472);
+  padding-left: 1rem;
+  font-family: "Tenor Sans", sans-serif;
+  color: rgb(176, 170, 170);
+}
+#email {
+  margin-bottom: 20px;
+}
+.forgot-password {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 100;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  color: rgb(163, 155, 155);
+}
 button {
-  
-  width: 150px;
-  height: 2.0rem;
-  border-radius: 3px;
+  width: 220px;
+  height: 46px;
+  border-radius: 28px;
   border: none;
-margin:0 auto;
-  background-color: #007bff;
+  margin: 0 20px;
+  background-color: #d69f92;
   color: #fff;
   cursor: pointer;
+  letter-spacing: 2px;
 }
-
-button:hover {
-  background-color: #18406c;
+.return {
+  border-bottom: 1px solid rgb(199, 194, 194);
+  padding: 4px;
+  font-family: "Tenor Sans", sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
-.line-with-word {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-top: 18px; /* Adjust as needed */
-  margin-bottom: 18px
-}
-
-.line {
-  border-top: 1px solid #000; /* Adjust line style */
-  width: 100px; /* Adjust line length */
-  margin-right: 10px; /* Space between line and word */
-}
-
-.word {
-  background-color: #fff; /* Set background color */
-  padding: 0 10px; /* Adjust padding */
-}
-
 </style>

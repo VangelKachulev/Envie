@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="./home.webp" alt="noimage">
+    <img src="./home.webp" alt="" />
   </div>
 </template>
 
@@ -9,16 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-div{
- display: flex;
- align-content: center;
- justify-content: center;
- width: 1920px;
- margin-top:30px;
- height:auto
-}
 img {
-   width: 100vw;
-
+ 
 }
 </style>

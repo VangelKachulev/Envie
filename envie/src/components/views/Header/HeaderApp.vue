@@ -97,7 +97,9 @@ export default {
   justify-content: center;
 }
 header {
-  width: 100vw;
+  
+  border-bottom: 1px solid rgb(214, 211, 211);
+  padding-bottom: 8px;
 }
 .logo {
   display: flex;
@@ -139,7 +141,7 @@ header {
   font-family: "Amatic SC", sans-serif;
   font-family: "Pathway Gothic One", sans-serif;
   font-family: "Satisfy", cursive;
-  margin-top:10px;
+ 
   letter-spacing:5px;
 }
 ul {
