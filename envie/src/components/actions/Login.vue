@@ -76,7 +76,7 @@ export default {
       this.$router.push("/register");
     },
     backToStore() {
-      this.$router.push("/home");
+      this.$router.push("/");
     },
   },
 };
