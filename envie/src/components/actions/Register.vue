@@ -1,26 +1,39 @@
 <template>
   <div class="registration-form">
-    <h1>Register</h1>
     <form @submit.prevent="register">
+      <h1>CREATE ACCOUNT</h1>
       <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" v-model="user.email" required />
+        <input
+          type="email"
+          id="email"
+          v-model="user.email"
+          required
+          placeholder="Email"
+        />
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="user.password" required />
+        <input
+          type="password"
+          id="password"
+          v-model="user.password"
+          required
+          placeholder="Password"
+        />
       </div>
       <div class="form-group">
-        <label for="repeatPassword">Repeat Password:</label>
         <input
           type="password"
           id="repeatPassword"
           v-model="user.repeatPassword"
           required
+          placeholder="Repeat password"
         />
       </div>
 
-      <button type="submit">Register</button>
+      <div class="form-group3">
+        <button type="submit">SIGN IN</button>
+        <span @click="backToStore" class="return">Return to Store</span>
+      </div>
     </form>
   </div>
 </template>
@@ -66,64 +79,57 @@ export default {
         }
       }
     },
+    backToStore() {
+      this.$router.push("/");
+    },
   },
 };
 </script>
 
 <style scoped>
 .registration-form {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 350px;
-  height: 45vh;
-
-  border-radius: 15px;
-  background-color: #f9f9f9;
-
+  width: 550px;
+  height: 65vh;
   position: absolute;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 h1 {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 800;
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 form {
-  width: 300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
+  width: 100%;
+  margin-top: 150px;
 }
 .form-group {
   margin-bottom: 35px;
   margin: 0 auto;
-  width:300px;
-  display:flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
   font-size: 1.6rem;
-  width:300px
+  width: 300px;
 }
 
 #email,
 #password,
 #repeatPassword {
-  width: 80%;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.472);
+  padding-left: 1rem;
+  font-family: "Tenor Sans", sans-serif;
   margin-bottom: 20px;
-  border-radius: 3px;
-  height: 1.5rem;
-  background-color: rgba(217, 212, 212, 0.523);
+  color: rgb(176, 170, 170);
+}
+#repeatPassword {
+  margin-bottom: 50px;
 }
 label {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -132,13 +138,21 @@ label {
   width: 80%;
 }
 button {
-  width: 150px;
-  height: 2rem;
-  border-radius: 3px;
+  width: 220px;
+  height: 46px;
+  border-radius: 28px;
   border: none;
-  margin: 16px auto;
-  background-color: #007bff;
+  margin: 0 20px;
+  background-color: #d69f92;
   color: #fff;
   cursor: pointer;
+  letter-spacing: 2px;
+}
+.return {
+  border-bottom: 1px solid rgb(199, 194, 194);
+  padding: 4px;
+  font-family: "Tenor Sans", sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 </style>

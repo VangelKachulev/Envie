@@ -87,8 +87,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Pathway+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Pathway+Gothic+One&family=Satisfy&display=swap");
 
-.main-login {
-}
+
 h1 {
   font-family: "Tenor Sans", sans-serif;
   font-weight: 100;
